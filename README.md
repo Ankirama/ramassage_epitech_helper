@@ -10,15 +10,14 @@ You must create a settings.json file like this one:
   "UUID": "uuid",
   "SECRET": "secret"
 }
+```
+
+Example:
 ```python
 from ramassage.project import Project
 
 print(Project().request('find_by_slug', {}, project_slug))
 ```
-
-
-To call a route:
-```python
 
 ## More
 
