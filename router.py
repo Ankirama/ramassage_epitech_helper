@@ -1,4 +1,5 @@
 import hmac, datetime, base64, re, requests, json, pytz
+from os import path
 
 class Router(object):
     """
@@ -26,7 +27,7 @@ class Router(object):
         :type tz: str
         """
         try:
-            with open('settings.json') as f:
+            with open(path.dirname(__file__) + '/settings.json') as f:
                 config = json.load(f)
         except FileNotFoundError as e:
             print("You must create a settings.json file with UUID / SECRET")
