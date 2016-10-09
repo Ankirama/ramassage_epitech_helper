@@ -76,7 +76,7 @@ class Router(object):
             data = "/%s/%s%s" % (self.DEFAULT_API_VERSION, resource, path)
         headers = self._headers(data)
         r = req_function(url, headers=headers, data=body_json)
-        if r.status_code == 200:
+        if r.status_code >= 200 and r.status_code < 300 :
             return {'error': False, 'status_code': r.status_code, 'content': r.json()}
         else:
             return {'error': True, 'status_code': r.status_code, 'content': r.content}
