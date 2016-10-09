@@ -10,7 +10,17 @@ You must create a settings.json file like this one:
   "UUID": "uuid",
   "SECRET": "secret"
 }
+```python
+from ramassage.project import Project
+
+print(Project().request('find_by_slug', {}, project_slug))
 ```
+
+
+To call a route:
+```python
+
+## More
 
 I didn't read any api doc for api.ramassage.epitech.eu, if you have any problem please tell me.
 You might need to contact [Steven MARTINS](https://github.com/steven-martins) to get your credentials (not sure)
